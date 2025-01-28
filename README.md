@@ -96,3 +96,6 @@
 - You can use a simple object or JSON to store the data, but try to separate it at least in a different file!
 - For simplicity you can return a 400 whenever it makes sense (for example post doesn't exist with a given id).
 - Please use JavaScript (and do not use TypeScript)
+- Do not use any Framework/ORM, you can use Express.js for an HTTP Server / Routing
+- Do not forget to create a service for the SPA
+- Try to add security features (nice to have, not mandatory)
