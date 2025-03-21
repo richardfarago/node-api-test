@@ -5,11 +5,13 @@ const PostsService = require("./posts/posts.service");
 const PostsController = require("./posts/posts.controller");
 
 const { rateLimit } = require("express-rate-limit");
+const helmet = require("helmet");
 
 //Init express
 const app = express();
 const PORT = process.env.API_PORT || 8000;
 app.use(cors());
+app.use(helmet());
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
