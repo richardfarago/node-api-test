@@ -39,7 +39,7 @@ describe("PostsController", () => {
     expect(response.body).toEqual({ data: mockPosts });
   });
 
-  it("should get post by ID", async () => {
+  it("should get post by ID (should convert numeric string)", async () => {
     const postId = "1";
     const mockPost = { id: 1, title: "Post 1" };
     mockPostsService.getById.mockReturnValue(mockPost);
@@ -69,7 +69,7 @@ describe("PostsController", () => {
     expect(response.body).toEqual({ error: "Invalid post ID" });
   });
 
-  it("should get comments by ID", async () => {
+  it("should get comments by ID (should convert numeric string)", async () => {
     const postId = "1";
     const mockComments = [{ id: 1, content: "Comment 1" }];
     mockPostsService.getCommentsById.mockReturnValue(mockComments);

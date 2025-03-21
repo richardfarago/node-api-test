@@ -1,16 +1,22 @@
 class PostsController {
+  //Inject PostsService as a dependency
   constructor(postsService) {
-    this.postsService = postsService;
+    this.postsService = postsService; 
   }
 
   getAll = (req, res) => {
-    console.log("Get posts");
-    res.send({ data: this.postsService.getAll() });
+    try {
+      console.log("Get posts");
+      res.send({ data: this.postsService.getAll() });
+    } catch(error) {
+      console.error(error);
+      res.status(400).send({ error: error.message });
+    }
   };
 
   getById = (req, res) => {
     try {
-      const postId = this.validateNumber(req.params.id); //Convert to number
+      const postId = this.validateNumericInput(req.params.id);
 
       console.log("Get post by id", postId);
       res.send({ data: this.postsService.getById(postId) });
@@ -22,7 +28,7 @@ class PostsController {
 
   getCommentsById = (req, res) => {
     try {
-      const postId = this.validateNumber(req.params.id); //Convert to number
+      const postId = this.validateNumericInput(req.params.id);
 
       console.log("Get comments by post id", postId);
       res.send({ data: this.postsService.getCommentsById(postId) });
@@ -33,14 +39,20 @@ class PostsController {
   };
 
   findByTag = (req, res) => {
-    const tagName = req.params.name;
+    try {
+      const tagName = req.params.name;
 
-    console.log("Find posts by tag", tagName);
-    res.send({ data: this.postsService.findByTag(tagName) });
+      console.log("Find posts by tag", tagName);
+      res.send({ data: this.postsService.findByTag(tagName) });
+    } catch(error) {
+      console.error(error);
+      res.status(400).send({ error: error.message });
+    }
+    
   };
 
-  validateNumber = (input) => {
-    const number = Number(input); //Convert to number
+  validateNumericInput = (input) => {
+    const number = Number(input); //Convert string to number
 
     if (Number.isNaN(number) || !Number.isInteger(number) || number < 0) {
       throw new Error("Invalid post ID");
