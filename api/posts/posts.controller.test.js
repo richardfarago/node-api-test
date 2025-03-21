@@ -64,7 +64,7 @@ describe("PostsController", () => {
     const postId = "2.2";
     const response = await request(app).get(`/posts/${postId}`);
 
-    expect(mockPostsService.getById).not.toHaveBeenCalled(); 
+    expect(mockPostsService.getById).not.toHaveBeenCalled();
     expect(response.status).toBe(400);
     expect(response.body).toEqual({ error: "Invalid post ID" });
   });
@@ -94,8 +94,8 @@ describe("PostsController", () => {
   it("should find posts by tag", async () => {
     const tagName = "tag1";
     const mockPosts = [
-        { id: 1, title: "Post 1", tags: ["tag1", "tag2"] },
-        { id: 2, title: "Post 2", tags: ['tag1'] },
+      { id: 1, title: "Post 1", tags: ["tag1", "tag2"] },
+      { id: 2, title: "Post 2", tags: ["tag1"] },
     ];
     mockPostsService.findByTag.mockReturnValue(mockPosts);
 

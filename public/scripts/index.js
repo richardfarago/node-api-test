@@ -1,9 +1,11 @@
 const render = (pID, s) => {
   let p = document.getElementById(pID);
-  let t = document.createElement('div');
-  p.innerHTML = '';
+  let t = document.createElement("div");
+  p.innerHTML = "";
   t.innerHTML = s;
-  while (t.firstChild) { p.appendChild(t.firstChild); }
+  while (t.firstChild) {
+    p.appendChild(t.firstChild);
+  }
 };
 
 const postTemplate = (p, detailed) => {
@@ -11,24 +13,28 @@ const postTemplate = (p, detailed) => {
     <div class="post">
       <p class="title">${p.title}</p>
       <p class="meta">
-        <span>${p.tags.map(t => `<a href="/tags/${t}">${t}</a>`).join(', ')}</span>
+        <span>${p.tags.map((t) => `<a href="/tags/${t}">${t}</a>`).join(", ")}</span>
         <span class="separator">&#x2022;</span>
-        <span>${(new Date(p.created_at)).toLocaleString('en-GB', ({ day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }))}</span>
+        <span>${new Date(p.created_at).toLocaleString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</span>
       </p>
       <div class="headline">${p.headline}</div>
-      ${detailed ? `
+      ${
+        detailed
+          ? `
         <div class="body">${p.body}</div>
         <div id="comments"></div>
-      ` : `
+      `
+          : `
         <a class="continue" href="/posts/${p.id}">Continue reading</a>
-      `}
+      `
+      }
     </div>
   `;
-}
+};
 
 const fourOFourTemplate = () => {
   return `<div class="post"><p class="title" style="text-align: center;">404. Nothing to see here!</p></div>`;
-}
+};
 
 const commentTemplate = (c) => {
   return `
@@ -37,11 +43,11 @@ const commentTemplate = (c) => {
       <p class="meta">
         <span>${c.author}</span>
         <span class="separator">&#x2022;</span>
-        <span>${(new Date(c.created_at)).toLocaleString('en-GB', ({ day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }))}</span>
+        <span>${new Date(c.created_at).toLocaleString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</span>
       </p>
     </div>
   `;
-}
+};
 
 const requirementsTemplate = () => {
   return `
@@ -142,62 +148,74 @@ const requirementsTemplate = () => {
       </div>
     </div>
   `;
-}
+};
 
 const route = window.location.pathname;
 
-const BASE_URL = 'http://localhost:8000';
-if (route === '/' || route === '/posts') {
+const BASE_URL = "http://localhost:8000";
+if (route === "/" || route === "/posts") {
   fetch(`${BASE_URL}/api/posts`)
     .then((res) => res.json())
     .then((res) => {
       if (res.data.length === 0) {
-        render('content', '<div class="post"><p class="title" style="text-align: center;">There are no posts yet. Come back later!</p></div>');
+        render(
+          "content",
+          '<div class="post"><p class="title" style="text-align: center;">There are no posts yet. Come back later!</p></div>',
+        );
       } else {
-        render('content', res.data.map(p => postTemplate(p)).join(''));
+        render("content", res.data.map((p) => postTemplate(p)).join(""));
       }
     })
     .catch((error) => {
       console.error("Error:", error);
     });
-} else if (route.startsWith('/posts/')) {
-  let id = route.split('/').slice(-1);
+} else if (route.startsWith("/posts/")) {
+  let id = route.split("/").slice(-1);
 
   fetch(`${BASE_URL}/api/posts/${id}`)
     .then((res) => res.json())
     .then((res) => {
-      render('content', postTemplate(res.data, true));
+      render("content", postTemplate(res.data, true));
 
       fetch(`${BASE_URL}/api/posts/${id}/comments`)
         .then((res) => res.json())
         .then((res) => {
           if (res.data.length === 0) {
-            render('comments', '<div class="comment"><p style="text-align: center;">There are no comments yet.</p></div>');
+            render(
+              "comments",
+              '<div class="comment"><p style="text-align: center;">There are no comments yet.</p></div>',
+            );
           } else {
-            render('comments', res.data.map(c => commentTemplate(c)).join(''));
+            render(
+              "comments",
+              res.data.map((c) => commentTemplate(c)).join(""),
+            );
           }
-        })
+        });
     })
     .catch((error) => {
-      render('content', fourOFourTemplate());
+      render("content", fourOFourTemplate());
     });
-} else if (route.startsWith('/tags/')) {
-  let id = route.split('/').slice(-1);
+} else if (route.startsWith("/tags/")) {
+  let id = route.split("/").slice(-1);
 
   fetch(`${BASE_URL}/api/tags/${id}`)
     .then((res) => res.json())
     .then((res) => {
       if (res.data.length === 0) {
-        render('content', '<div class="post"><p class="title" style="text-align: center;">There are no posts yet. Come back later!</p></div>');
+        render(
+          "content",
+          '<div class="post"><p class="title" style="text-align: center;">There are no posts yet. Come back later!</p></div>',
+        );
       } else {
-        render('content', res.data.map(p => postTemplate(p)).join(''));
+        render("content", res.data.map((p) => postTemplate(p)).join(""));
       }
     })
     .catch((error) => {
       console.error("Error:", error);
     });
-} else if (route.startsWith('/requirements')) {
-  render('content', requirementsTemplate());
+} else if (route.startsWith("/requirements")) {
+  render("content", requirementsTemplate());
 } else {
-  render('content', fourOFourTemplate());
+  render("content", fourOFourTemplate());
 }

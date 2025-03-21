@@ -1,14 +1,14 @@
 class PostsController {
   //Inject PostsService as a dependency
   constructor(postsService) {
-    this.postsService = postsService; 
+    this.postsService = postsService;
   }
 
   getAll = (req, res) => {
     try {
       console.log("Get posts");
       res.send({ data: this.postsService.getAll() });
-    } catch(error) {
+    } catch (error) {
       console.error(error);
       res.status(400).send({ error: error.message });
     }
@@ -44,11 +44,10 @@ class PostsController {
 
       console.log("Find posts by tag", tagName);
       res.send({ data: this.postsService.findByTag(tagName) });
-    } catch(error) {
+    } catch (error) {
       console.error(error);
       res.status(400).send({ error: error.message });
     }
-    
   };
 
   validateNumericInput = (input) => {
