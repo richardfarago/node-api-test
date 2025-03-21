@@ -1,4 +1,4 @@
-# Solution comments
+# Solution notes
 
 - Possible improvements could be:
   - Add JWT authentication
