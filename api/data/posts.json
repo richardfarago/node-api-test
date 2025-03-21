@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "The Comeback of Retro Fashion",
+    "headline": "Why Y2K and 90s styles are back",
+    "body": "Fashion trends from the past are making a big return, with vintage clothing becoming more popular than ever.",
+    "created_at": "2023-03-15",
+    "tags": ["Fashion", "Lifestyle", "Trends"]
+  },
+  {
+    "id": 2,
+    "title": "The Magic of Morning Routines",
+    "headline": "How a great morning can change your day",
+    "body": "From meditation to coffee rituals, a well-planned morning can set the tone for success.",
+    "created_at": "2023-03-14",
+    "tags": ["Wellness", "Productivity", "Lifestyle"]
+  },
+  {
+    "id": 3,
+    "title": "Best Travel Destinations for 2024",
+    "headline": "Hidden gems you need to visit",
+    "body": "From underrated islands to vibrant cities, these are the must-visit places this year.",
+    "created_at": "2023-03-13",
+    "tags": ["Travel", "Adventure", "Lifestyle"]
+  },
+  {
+    "id": 4,
+    "title": "The Rise of Cozy Gaming",
+    "headline": "Why people are loving relaxing video games",
+    "body": "With games like Stardew Valley and Animal Crossing, players are enjoying stress-free gaming experiences.",
+    "created_at": "2023-03-12",
+    "tags": ["Gaming", "Entertainment", "Tech"]
+  },
+  {
+    "id": 5,
+    "title": "DIY Home Decor Hacks",
+    "headline": "Simple ways to refresh your space",
+    "body": "Creative and budget-friendly home decor ideas to make your space feel new again.",
+    "created_at": "2023-03-11",
+    "tags": ["Home", "DIY", "Lifestyle"]
+  },
+  {
+    "id": 6,
+    "title": "The Science of Happiness",
+    "headline": "Small habits that make a big difference",
+    "body": "Studies show that tiny changes in daily routines can significantly boost happiness levels.",
+    "created_at": "2023-03-10",
+    "tags": ["Wellness", "Psychology", "Self-Improvement"]
+  },
+  {
+    "id": 7,
+    "title": "The Best Comfort Foods Around the World",
+    "headline": "Dishes that feel like a warm hug",
+    "body": "From Italian pasta to Japanese ramen, here are the most comforting foods globally.",
+    "created_at": "2023-03-09",
+    "tags": ["Food", "Culture", "Travel"]
+  },
+  {
+    "id": 8,
+    "title": "Podcasts You Need to Listen to in 2024",
+    "headline": "From true crime to self-growth",
+    "body": "Here are the most engaging and thought-provoking podcasts to add to your playlist.",
+    "created_at": "2023-03-08",
+    "tags": ["Entertainment", "Education", "Tech"]
+  },
+  {
+    "id": 9,
+    "title": "The Joy of Indoor Plants",
+    "headline": "Why houseplants are good for your mood",
+    "body": "Adding greenery to your home can improve air quality and boost mental health.",
+    "created_at": "2023-03-07",
+    "tags": ["Home", "Wellness", "Nature"]
+  },
+  {
+    "id": 10,
+    "title": "The Future of Coffee",
+    "headline": "New trends in the coffee world",
+    "body": "From sustainable beans to unique brewing methods, coffee culture is evolving fast.",
+    "created_at": "2023-03-06",
+    "tags": ["Food", "Trends", "Lifestyle"]
+  }
+]

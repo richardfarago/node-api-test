@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "created_at": "2023-03-16",
+    "postId": 1,
+    "author": "Alice_W",
+    "body": "I love how fashion always comes full circle! Excited to see 90s trends back!"
+  },
+  {
+    "id": 2,
+    "created_at": "2023-03-16",
+    "postId": 1,
+    "author": "StyleGuru",
+    "body": "Y2K fashion is such a vibe! Hope scrunchies stay forever!"
+  },
+  {
+    "id": 3,
+    "created_at": "2023-03-15",
+    "postId": 2,
+    "author": "MorningPerson99",
+    "body": "Morning routines changed my life. Great tips!"
+  },
+  {
+    "id": 4,
+    "created_at": "2023-03-15",
+    "postId": 2,
+    "author": "Jake_Fitness",
+    "body": "Totally agree! Starting the day right makes a huge difference in productivity."
+  },
+  {
+    "id": 5,
+    "created_at": "2023-03-14",
+    "postId": 3,
+    "author": "WanderlustEmily",
+    "body": "Adding all these places to my bucket list! Love hidden gems!"
+  },
+  {
+    "id": 6,
+    "created_at": "2023-03-14",
+    "postId": 3,
+    "author": "GlobeTrotterX",
+    "body": "Great list! Any recommendations for solo travelers?"
+  },
+  {
+    "id": 7,
+    "created_at": "2023-03-13",
+    "postId": 4,
+    "author": "GamerGirl87",
+    "body": "Cozy gaming is the best way to relax after a long day!"
+  },
+  {
+    "id": 8,
+    "created_at": "2023-03-13",
+    "postId": 4,
+    "author": "RetroPlayer",
+    "body": "Stardew Valley is my go-to chill game. Any new recommendations?"
+  },
+  {
+    "id": 9,
+    "created_at": "2023-03-12",
+    "postId": 5,
+    "author": "HomeLover22",
+    "body": "DIY projects are so satisfying! Can't wait to try these!"
+  },
+  {
+    "id": 10,
+    "created_at": "2023-03-12",
+    "postId": 6,
+    "author": "HappyMind",
+    "body": "I’ve been implementing these small habits, and they really work!"
+  },
+  {
+    "id": 11,
+    "created_at": "2023-03-11",
+    "postId": 7,
+    "author": "FoodieTraveller",
+    "body": "Comfort food is the best part of traveling! Love this post!"
+  },
+  {
+    "id": 12,
+    "created_at": "2023-03-11",
+    "postId": 7,
+    "author": "ChefMike",
+    "body": "Nothing beats homemade ramen on a rainy day!"
+  },
+  {
+    "id": 13,
+    "created_at": "2023-03-10",
+    "postId": 8,
+    "author": "PodcastFan123",
+    "body": "I’ve been looking for new podcasts! Thanks for the recommendations!"
+  },
+  {
+    "id": 14,
+    "created_at": "2023-03-10",
+    "postId": 9,
+    "author": "PlantLover",
+    "body": "Houseplants make such a difference! My apartment feels so much fresher!"
+  },
+  {
+    "id": 15,
+    "created_at": "2023-03-09",
+    "postId": 10,
+    "author": "CoffeeAddict",
+    "body": "I need to try some of these new coffee trends!"
+  }
+]
